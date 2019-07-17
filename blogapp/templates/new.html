@@ -1,15 +1,18 @@
-{%extends 'base.html'%}
+
 {%block contents%}
 <br>
 
 <div class = 'container'>
-  <form method="POST">
-    {% csrf_token %}
-    <table>
-        {{form.as_table}}
-    </table>
-    <br>
-        <input class="btn btn-dark" type="submit" value="제출하기">
-    </form>
+    <form class="" action="{% url 'create'%}">
+        {% csrf_token %}
+        <h3>제목 :</h3>
+        <input type="text" name="title">
+        <br>
+        <br>
+        <h3>본문 :</h3>
+        <textarea name="body" rows="10" cols="40"></textarea>
+        <br>
+        <input type="submit" class="btn btn-dark" value="제출하기">
+      </form>
     </div>
 {%endblock%}
